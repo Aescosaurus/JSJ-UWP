@@ -63,7 +63,7 @@ class Graphics
 			}
 		};
 
-		this.DrawImage = ( index,pos = Vec2( 0,0 ),size = Vec2( 0,0 ) ) =>
+		this.DrawImagePos = ( index,pos = Vec2( 0,0 ),size = Vec2( 0,0 ) ) =>
 		{
 			this.DrawImage( index,pos.x,pos.y,size.x,size.y );
 		};
@@ -74,7 +74,7 @@ class Graphics
 			ctx.fillRect( x,y,width,height );
 		};
 
-		this.DrawRect = ( pos,size,color ) =>
+		this.DrawRectPos = ( pos,size,color ) =>
 		{
 			this.DrawRect( pos.x,pos.y,size.x,size.y,color );
 		};
@@ -88,7 +88,7 @@ class Graphics
 			ctx.fill();
 		};
 
-		this.DrawCircle = ( pos,radius,color ) =>
+		this.DrawCirclePos = ( pos,radius,color ) =>
 		{
 			this.DrawCircle( pos.x,pos.y,radius,color );
 		};
@@ -109,7 +109,7 @@ class Graphics
 			ctx.fillRect( x,y,width,height );
 		};
 
-		this.DrawGrad = ( pos,size,colors ) =>
+		this.DrawGradPos = ( pos,size,colors ) =>
 		{
 			DrawGrad( pos.x,pos.y,size.x,size.y,colors );
 		};
@@ -121,7 +121,7 @@ class Graphics
 			ctx.fillText( msg,x,y );
 		};
 
-		this.DrawText = ( pos,font,color,msg ) =>
+		this.DrawTextPos = ( pos,font,color,msg ) =>
 		{
 			this.DrawText( pos.x,pos.y,font,color,msg );
 		};
