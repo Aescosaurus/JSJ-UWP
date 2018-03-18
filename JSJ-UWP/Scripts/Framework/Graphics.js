@@ -1,4 +1,4 @@
-﻿class Graphics
+class Graphics
 {
 	constructor()
 	{
@@ -63,10 +63,20 @@
 			}
 		};
 
+		this.DrawImage = ( index,pos = Vec2( 0,0 ),size = Vec2( 0,0 ) ) =>
+		{
+			this.DrawImage( index,pos.x,pos.y,size.x,size.y );
+		};
+
 		this.DrawRect = ( x,y,width,height,color ) =>
 		{
 			ctx.fillStyle = color;
 			ctx.fillRect( x,y,width,height );
+		};
+
+		this.DrawRect = ( pos,size,color ) =>
+		{
+			this.DrawRect( pos.x,pos.y,size.x,size.y,color );
 		};
 
 		this.DrawCircle = ( x,y,radius,color ) =>
@@ -76,6 +86,11 @@
 			ctx.beginPath();
 			ctx.arc( x,y,radius,0,2 * Math.PI );
 			ctx.fill();
+		};
+
+		this.DrawCircle = ( pos,radius,color ) =>
+		{
+			this.DrawCircle( pos.x,pos.y,radius,color );
 		};
 
 		this.DrawGrad = ( x,y,width,height,colors ) =>
@@ -94,11 +109,21 @@
 			ctx.fillRect( x,y,width,height );
 		};
 
+		this.DrawGrad = ( pos,size,colors ) =>
+		{
+			DrawGrad( pos.x,pos.y,size.x,size.y,colors );
+		};
+
 		this.DrawText = ( x,y,font,color,msg ) =>
 		{
 			ctx.fillStyle = color;
 			ctx.font = font;
 			ctx.fillText( msg,x,y );
+		};
+
+		this.DrawText = ( pos,font,color,msg ) =>
+		{
+			this.DrawText( pos.x,pos.y,font,color,msg );
 		};
 
 		window.onresize = () =>
