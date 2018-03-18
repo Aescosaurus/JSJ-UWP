@@ -12,7 +12,7 @@
 
 		this.UpdateGame = () =>
 		{
-
+			const pos = Vec2( 5,5 );
 		}
 
 		this.ComposeFrame = () =>

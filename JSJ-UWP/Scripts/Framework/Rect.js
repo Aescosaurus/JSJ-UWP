@@ -1,4 +1,4 @@
-﻿class Rect
+﻿class Rect_
 {
 	constructor( x,y,width,height )
 	{
@@ -39,8 +39,28 @@
 
 		this.GetMovedBy = ( amount ) =>
 		{
-			return ( new Rect( this.x + amount.x,this.y + amount.y,
-				this.width,this.height ) );
+			return this.Clone().MoveBy( amount );
+		}
+
+		this.GetMovedTo = ( pos ) =>
+		{
+			return this.Clone().MoveTo( pos );
+		}
+
+		this.Clone = () =>
+		{
+			return Rect( this.x,this.y,this.width,this.height );
+		}
+
+		this.IsValid = () =>
+		{
+			return ( width > 0 && height > 0 );
 		}
 	}
+}
+
+// Call this like [const hitbox = Rect( 0,0,10,10 );].
+function Rect( x,y,width,height )
+{
+	return ( new Rect_( x,y,width,height ) );
 }
