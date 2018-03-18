@@ -2,7 +2,7 @@
 {
 	constructor()
 	{
-		const canv = document.getElementById( "game" );
+		const canv = document.getElementById( "Game" );
 		const ctx = canv.getContext( "2d" );
 
 		let images = [];

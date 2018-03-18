@@ -1,12 +1,12 @@
-﻿const wnd = new Window();
+﻿const wnd = new _Window();
 const theGame = new Game( wnd );
+const fps = 30.0;
 
 window.onload = () =>
 {
 	wnd.Initialize();
 	theGame.Initialize();
 
-	const fps = 30.0;
 	setInterval( () =>
 	{
 		theGame.UpdateGame();

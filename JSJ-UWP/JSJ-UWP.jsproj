@@ -75,8 +75,8 @@
     <Content Include="Scripts\Framework\Sound.js" />
     <Content Include="Scripts\Framework\Utils.js" />
     <Content Include="Scripts\Framework\Vec2.js" />
-    <Content Include="Scripts\Framework\Window.js" />
-    <Content Include="Scripts\Game.js" />
+    <Content Include="Scripts\Framework\_Window.js" />
+    <Content Include="Scripts\_Game.js" />
     <None Include="JSJ-UWP_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />

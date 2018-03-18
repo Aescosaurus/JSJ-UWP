@@ -3,7 +3,7 @@
 	constructor( wnd )
 	{
 		// Variables go here.
-
+		
 		// 
 		this.Initialize = () =>
 		{
