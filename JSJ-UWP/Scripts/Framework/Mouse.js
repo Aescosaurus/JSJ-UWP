@@ -24,16 +24,16 @@
 				pos.x = e.clientX - rect.left - root.scrollLeft;
 				pos.y = e.clientY - rect.top - root.scrollTop;
 			} );
-		}
+		};
 
 		this.GetPos = () =>
 		{
 			return pos;
-		}
+		};
 
 		this.IsDown = () =>
 		{
 			return isDown;
-		}
+		};
 	}
 }

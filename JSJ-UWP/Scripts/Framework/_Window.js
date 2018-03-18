@@ -11,6 +11,6 @@
 		{
 			this.gfx.Initialize();
 			this.mouse.Initialize( this.gfx.GetCanvas() );
-		}
+		};
 	}
 }

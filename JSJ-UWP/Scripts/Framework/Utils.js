@@ -1,7 +1,7 @@
 ﻿function Random() { }
 Random.Range = ( min,max ) =>
 { // Auto range function.
-	if( min % 1 == 0 && max % 1 == 0 )
+	if( min % 1 === 0 && max % 1 === 0 )
 	{ // Int
 		return Random.RangeI( min,max );
 	}
@@ -9,21 +9,21 @@ Random.Range = ( min,max ) =>
 	{ // Float
 		return Random.RangeF( min,max );
 	}
-}
+};
 
 Random.RangeI = ( min,max ) =>
 {
-	return ( Math.floor( Math.random() * ( 1 + max - min ) ) + min );
-}
+	return Math.floor( Math.random() * ( 1 + max - min ) ) + min;
+};
 
 Random.RangeF = ( min,max ) =>
 {
-	return ( ( Math.random() * ( max - min ) ) + min );
-}
+	return Math.random() * ( max - min ) + min;
+};
 
 Random.Deviate = ( amount,maxDeviation ) =>
 {
-	if( amount % 1 == 0 )
+	if( amount % 1 === 0 )
 	{ // Int
 		return Random.DeviateI( min,max );
 	}
@@ -31,19 +31,19 @@ Random.Deviate = ( amount,maxDeviation ) =>
 	{ // Float
 		return Random.DeviateF( min,max );
 	}
-}
+};
 
 Random.DeviateI = ( amount,maxDeviation ) =>
 {
-	return ( amount + Random.RangeI( -maxDeviation,maxDeviation ) );
-}
+	return amount + Random.RangeI( -maxDeviation,maxDeviation );
+};
 
 Random.DeviateF = ( amount,maxDeviation ) =>
 {
-	return ( amount + Random.RangeF( -maxDeviation,maxDeviation ) );
-}
+	return amount + Random.RangeF( -maxDeviation,maxDeviation );
+};
 
 Random.Chance = ( percentChance ) =>
 {
-	return ( Random.RangeF( 0,100 ) < percentChance );
-}
+	return Random.RangeF( 0,100 ) < percentChance;
+};
