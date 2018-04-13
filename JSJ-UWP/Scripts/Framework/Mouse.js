@@ -2,6 +2,9 @@
 {
 	constructor()
 	{
+		if( _Window.prototype.MOUSE_EXISTS ) return;
+		else _Window.prototype.MOUSE_EXISTS = true;
+
 		const pos = new Vec2( 0,0 );
 		let isDown = false;
 		// 

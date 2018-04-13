@@ -14,3 +14,8 @@
 		};
 	}
 }
+
+_Window.prototype.GFX_EXISTS = false;
+_Window.prototype.KBD_EXISTS = false;
+_Window.prototype.MOUSE_EXISTS = false;
+_Window.prototype.SFX_EXISTS = false;

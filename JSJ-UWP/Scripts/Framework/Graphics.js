@@ -2,14 +2,21 @@ class Graphics
 {
 	constructor()
 	{
+		if( _Window.prototype.GFX_EXISTS ) return;
+		else _Window.prototype.GFX_EXISTS = true;
+
 		const canv = document.getElementById( "Game" );
 		const ctx = canv.getContext( "2d" );
 
 		let images = [];
 
+		const defaultScreenSize = Vec2( 650,450 );
+
 		this.ScreenWidth = canv.width;
 		this.ScreenHeight = canv.height;
-		// this.ScreenRect = new Rect( 0,0,canv.width,canv.height );
+		this.ScreenRect = new Rect( 0,0,canv.width,canv.height );
+
+		this.SizeMult = Vec2( 1,1 );
 		// 
 		this.Initialize = () =>
 		{
@@ -79,6 +86,11 @@ class Graphics
 			this.DrawRect( pos.x,pos.y,size.x,size.y,color );
 		};
 
+		this.DrawHitbox = ( rect,color ) =>
+		{
+			this.DrawRect( rect.x,rect.y,rect.width,rect.height,color );
+		}
+
 		this.DrawCircle = ( x,y,radius,color ) =>
 		{
 			ctx.fillStyle = color;
@@ -130,8 +142,12 @@ class Graphics
 		{
 			canv.width = window.innerWidth;
 			canv.height = window.innerHeight;
+
 			this.ScreenWidth = canv.width;
 			this.ScreenHeight = canv.height;
+
+			this.SizeMult = Vec2( canv.width / defaultScreenSize.x,
+				canv.height / defaultScreenSize.y );
 		};
 	}
 }

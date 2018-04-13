@@ -2,6 +2,9 @@
 {
 	constructor()
 	{
+		if( _Window.prototype.SFX_EXISTS ) return;
+		else _Window.prototype.SFX_EXISTS = true;
+
 		let sounds = [];
 		let curSound = 0;
 		//
