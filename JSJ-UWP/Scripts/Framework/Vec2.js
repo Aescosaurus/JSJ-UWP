@@ -1,4 +1,4 @@
-﻿class Vec2
+﻿class Vec2_
 {
 	constructor( x,y )
 	{
@@ -11,12 +11,12 @@
 			this.y += other.y;
 
 			return this;
-		}
+		};
 
 		this.GetAdded = ( other ) =>
 		{
-			return ( new Vec2( this.x + other.x,this.y + other.y ) );
-		}
+			return this.Clone().Add( other );
+		};
 
 		this.Subtract = ( other ) =>
 		{
@@ -24,12 +24,12 @@
 			this.y -= other.y;
 
 			return this;
-		}
+		};
 
 		this.GetSubtracted = ( other ) =>
 		{
-			return ( new Vec2( this.x - other.x,this.y - other.y ) );
-		}
+			return this.Clone().Subtract( other );
+		};
 
 		this.Multiply = ( amount ) =>
 		{
@@ -37,12 +37,12 @@
 			this.y *= amount;
 
 			return this;
-		}
+		};
 
 		this.GetMultiplied = ( amount ) =>
 		{
-			return ( new Vec2( this.x * amount,this.y * amount ) );
-		}
+			return this.Clone().Multiply( amount );
+		};
 
 		this.Divide = ( amount ) =>
 		{
@@ -50,12 +50,12 @@
 			this.y /= amount;
 
 			return this;
-		}
+		};
 
 		this.GetDivided = ( amount ) =>
 		{
-			return ( new Vec2( this.x / amount,this.y / amount ) );
-		}
+			return this.Clone().Divide( amount );
+		};
 
 		this.Normalize = () =>
 		{
@@ -69,32 +69,57 @@
 			this.y = this.y / div;
 
 			return this;
-		}
+		};
 
 		this.GetNormalized = () =>
 		{
-			const div = Math.sqrt( this.x * this.x + this.y * this.y );
-			if( div === 0 )
-			{
-				return;
-			}
-
-			return ( new Vec2( this.x / div,this.y / div ) );
-		}
+			return this.Clone().Normalize();
+		};
 
 		this.GetLengthSq = () =>
 		{
-			return ( x * x + y * y );
-		}
+			return x * x + y * y;
+		};
 
 		this.GetLength = () =>
 		{
 			return Math.sqrt( this.GetLengthSq() );
-		}
+		};
 
 		this.Equals = ( other ) =>
 		{
-			return ( this.x == other.x && this.y == other.y );
-		}
+			return this.x === other.x && this.y === other.y;
+		};
+
+		this.Clone = () =>
+		{
+			return new Vec2_( this.x,this.y );
+		};
 	}
+}
+
+Vec2_.Up = () =>
+{
+	return Vec2( 0,-1 );
+};
+
+Vec2_.Down = () =>
+{
+	return Vec2( 0,1 );
+};
+
+Vec2_.Left = () =>
+{
+	return Vec2( -1,0 );
+};
+
+Vec2_.Right = () =>
+{
+	return Vec2( 1,0 );
+};
+
+// Just a regular function, but doesn't need new keyword.
+function Vec2( x,y )
+{
+	return new Vec2_( x,y );
 }

@@ -1,4 +1,4 @@
-﻿class Window
+﻿class _Window
 {
 	constructor()
 	{
@@ -11,6 +11,11 @@
 		{
 			this.gfx.Initialize();
 			this.mouse.Initialize( this.gfx.GetCanvas() );
-		}
+		};
 	}
 }
+
+_Window.prototype.GFX_EXISTS = false;
+_Window.prototype.KBD_EXISTS = false;
+_Window.prototype.MOUSE_EXISTS = false;
+_Window.prototype.SFX_EXISTS = false;

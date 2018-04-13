@@ -2,6 +2,9 @@
 {
 	constructor()
 	{
+		if( _Window.prototype.MOUSE_EXISTS ) return;
+		else _Window.prototype.MOUSE_EXISTS = true;
+
 		const pos = new Vec2( 0,0 );
 		let isDown = false;
 		// 
@@ -24,16 +27,16 @@
 				pos.x = e.clientX - rect.left - root.scrollLeft;
 				pos.y = e.clientY - rect.top - root.scrollTop;
 			} );
-		}
+		};
 
 		this.GetPos = () =>
 		{
 			return pos;
-		}
+		};
 
 		this.IsDown = () =>
 		{
 			return isDown;
-		}
+		};
 	}
 }
